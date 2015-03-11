@@ -48,15 +48,15 @@ if ($form) {
 	<form method="post" action="">
 		
 		<label for="fullname">Full Name:</label>
-		<input type="text" class="text" name="fullname" id="fullname" value="<?php echo $fullname ?>" />
+		<input type="text" class="text" name="fullname" id="fullname" value="<?php echo (isset($fullname) ? $fullname:""); ?>" />
 		<br />
 		
 		<label for="nickname">Nickname:</label>
-		<input type="text" class="text" name="nickname" id="nickname" value="<?php echo $nickname ?>" />
+		<input type="text" class="text" name="nickname" id="nickname" value="<?php echo (isset($nickname) ? $nickname:""); ?>" />
 		<br />
 		
 		<label for="email">Email:</label>
-		<input type="text" class="text" name="email" id="email" value="<?php echo $email ?>" />
+		<input type="text" class="text" name="email" id="email" value="<?php echo (isset($email) ? $email:""); ?>" />
 		<br />
 		
 		<label for="dob">Date of Birth:</label>
@@ -89,7 +89,7 @@ if ($form) {
 		<br />
 		
 		<label for="postcode">Postal Code:</label>
-		<input type="text" class="text" name="postcode" id="postcode" value="<?php echo $postcode ?>" />
+		<input type="text" class="text" name="postcode" id="postcode" value="<?php echo (isset($postcode) ? $postcode:""); ?>" />
 		<br />
 		
 		<label for="country">Country:</label>
