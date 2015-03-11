@@ -25,7 +25,7 @@ if ($form) {
 		$error = 'password';
 	}
 	
-	if (!$error) {
+	if (!isset($error)) {
 		
 		$config = '<?php' . "\n\n";
 		$config .= '$GLOBALS[\'profile\'] = array(' . "\n";
@@ -64,20 +64,20 @@ if ($form) {
 	<p>Please choose a username and password for your new OpenID account:</p>
 	
 	<?php
+	if(isset($error)){
+		if ($error == 'fields') {
+			echo '<p>You must fill in all of the fields</p>';
+		}
 	
-	if ($error == 'fields') {
-		echo '<p>You must fill in all of the fields</p>';
+		if ($error == 'password') {
+			echo '<p>Your passwords didn\'t match!</p>';
+		}
 	}
-	
-	if ($error == 'password') {
-		echo '<p>Your passwords didn\'t match!</p>';
-	}
-	
 	?>
 	
 	<form method="post" action="">
 		<label for="username">Username:</label>
-		<input type="text" class="text" name="username" id="username" value="<?php echo $username ?>" />
+		<input type="text" class="text" name="username" id="username" value="<?php echo (isset($username) ? $username:""); ?>" />
 		<br />
 		
 		<label for="password">Password:</label>
